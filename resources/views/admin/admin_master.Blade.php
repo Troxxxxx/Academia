@@ -57,7 +57,6 @@
   </div>-->
 
         <!-- Navbar -->
-        @include('admin.body.header')
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         @include('admin.body.sidebar')

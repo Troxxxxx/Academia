@@ -66,7 +66,8 @@ Route::get('/jugadores/{equipo_id}', [JugadorController::class, 'getJugadores'])
 Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
 Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
 Route::put('/staff/{id}', [StaffController::class, 'update'])->name('staff.update');
-    
+Route::delete('/staff/{id}', [StaffController::class, 'destroy'])->name('staff.destroy');
+  
 //rutas jugadoresExtranjeros
 Route::get('/historia', [JugadorExtranjeroController::class, 'index'])->name('historia.index');
 
