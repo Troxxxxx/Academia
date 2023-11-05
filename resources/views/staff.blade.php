@@ -1,5 +1,5 @@
+@include('admin.body.redes')
 @include('admin.body.encabezado')
-
 <style>
 body {
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
@@ -92,8 +92,6 @@ body {
                     <!-- Asegúrate de que la ruta de la imagen esté correctamente formateada -->
                     <img src="{{ asset('storage/' . $persona->imagen) }}" alt="{{ $persona->nombre }}"
                         class="card-img-top">
-
-
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ $persona->nombre }}</h5>
                         <p class="card-text">{{ $persona->cargo }}</p>

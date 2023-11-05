@@ -1,3 +1,4 @@
+@include('admin.body.redes')
 @include('admin.body.encabezado')
 
 

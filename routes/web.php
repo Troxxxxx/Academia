@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     JugadorController,
     JugadorExtranjeroController,
     InfoController,
+    HorarioController,
 };
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ Route::get('/', function () {
 
 // Dashboard
 Route::get('/dashboard', function () {
-    return view('admin.index');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Acerca de
@@ -41,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/changedata/profile', [AdminController::class,'ChangeProfileData'])->name('changedata.profile');
     Route::get('/change/password', [AdminController::class,'ChangePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class,'UpdatePassword'])->name('update.password');
-    Route::get('/admin/users', [AdminController::class,'AdminController@users'])->name('admin.users');
+    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
 });
 
 // Perfil de Usuario
@@ -72,9 +73,7 @@ Route::delete('/staff/{id}', [StaffController::class, 'destroy'])->name('staff.d
 Route::get('/historia', [JugadorExtranjeroController::class, 'index'])->name('historia.index');
 
 // Horarios
-Route::get('/horarios', function () {
-    return view('horarios');
-})->name('horarios.index');
+Route::get('/horarios', [HorarioController::class, 'index'])->name('horarios.index');
 
 // Información
 Route::get('/info', [InfoController::class, 'index']);

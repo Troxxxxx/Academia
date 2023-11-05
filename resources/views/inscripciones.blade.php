@@ -1,5 +1,5 @@
+@include('admin.body.redes')
 @include('admin.body.encabezado')
-
 
 <!DOCTYPE html>
 <html lang="en">

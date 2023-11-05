@@ -16,7 +16,7 @@ class Equipo extends Model
     ];
 
     // Define la relación con la sede
-    public function sede()
+    public function sedes()
     {
         return $this->belongsTo(Sede::class, 'sede_id');
     }
